@@ -99,7 +99,7 @@
                         ?>
                         <a href="{{ url('show') }}">Posty</a>
                         <a href="{{ url('create') }}">Dodaj post</a>
-                        <a href="https://laravel-news.com">Kategorie</a>
+                        <a href="{{ url('categories') }}">Kategorie</a>
                        
                     </div>
         <style>
@@ -111,24 +111,35 @@
             }
          </style>
      
-    
+     <div class="links">
+        
         
 
         <form action="/laravel/blog/public/create" method="POST"> @csrf <br>
-       
+        <div class="links"> Tytuł </div>
         <input type="text" class='form-control' name="title"> <br>
         <!-- <input type="text" class='form-control' name="slug"> <br> -->
-
+        <div class="links"> Kategoria </div>
         <select id="category" class='form-control' name="slug"> 
+            <!--
             <option value="Szukam osoby">Szukam osoby</option>
             <option value="Pozdrawiam">Pozdrawiam</option>
             <option value="Nie pozdrawiam">Nie pozdrawiam</option>
             <option value="Zagubiono">Zagubiono</option>
-        </select> <br>
+            -->
+            @foreach ($categories as $cat) 
+            <option value=" {{$cat -> category}} "> {{$cat -> category}}</option>
+            @endforeach 
 
+        </select> <br>
+        <div class="links"> Treść </div>
         <textarea name="content" class="form-control"></textarea> <br>
         <button> Dodaj </button>
         </form>
     
+      
+       
+     
+
     </body>
 </html>

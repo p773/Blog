@@ -113,20 +113,20 @@
                    
                    @foreach ($pages as $page)
                
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                          <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1"> #{{$page -> id}}  {{$page -> title}} </h5>
-                            <small> {{$page -> created_at}} </small>
-                          </div>
-                   
-                          <p class="mb-1"> {{$page -> content}} </p>
-                          <small> {{$page -> slug}}  </small>
-                        </a>
-                     </div>
+                   <div class="list-group">
+                       <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                         <div class="d-flex w-100 justify-content-between">
+                           <h5 class="mb-1"> #{{$page -> id}}  {{$page -> title}} </h5>
+                           <small> {{$page -> created_at}} </small>
+                         </div>
+                  
+                         <p class="mb-1"> {{$page -> content}} </p>
+                         <small> {{$page -> slug}}  </small>
+                       </a>
+                    </div>
 
 
-                    @endforeach
+                   @endforeach
 
                     @else 
                     <p> No posts </p>
@@ -140,7 +140,7 @@
             </div>
             
         </div>
-        <div class="flex-center"> {{ $pages->links() }}</div>
+        <div class="flex-center"> {{ $pages->links() }} </div>
     </body>
     
 </html>

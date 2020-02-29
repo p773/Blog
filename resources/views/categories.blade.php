@@ -57,8 +57,6 @@
                 text-decoration: none;
                 text-transform: uppercase;
                 text-align: center;
-
-            
             }
 
             .m-b-md {
@@ -102,45 +100,21 @@
                     <a href="{{ url('categories') }}">Kategorie</a>
                    
                 </div>
-
-                <br>
-                <div class="box">
-                        
+                <br><br>
+                <div class="links">
+                @foreach ($categories as $cat)
                     
-                    <!--$create = action(PagesController::class, 'create']); -->
-                   
-                   @if(count($pages)>0)
-                   
-                   @foreach ($pages as $page)
                
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                          <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1"> #{{$page -> id}}  {{$page -> title}} </h5>
-                            <small> {{$page -> created_at}} </small>
-                          </div>
-                   
-                          <p class="mb-1"> {{$page -> content}} </p>
-                          <small> {{$page -> slug}}  </small>
-                        </a>
-                     </div>
-
-
-                    @endforeach
-
-                    @else 
-                    <p> No posts </p>
-                   @endif
-
-
-                 
-                </div>
-                <br>
+                     <a href="{{ url('showcat/'.$cat->category) }}" class="">  {{$cat->category}} </a> 
+                    
+                       
                 
+                 
+        
+                @endforeach  
+                </div>
+                </div>
             </div>
-            
         </div>
-        <div class="flex-center"> {{ $pages->links() }}</div>
     </body>
-    
 </html>
